@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import OrderItensController from '../controllers/OrderItensController';
+import OrderItensController from '../controllers/OrderItenscontroller';
 
 const router = Router()
 router.get('/', OrderItensController.getAllOrderItens)

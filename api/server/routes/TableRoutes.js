@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import TableController from '../controllers/TableController';
+import TableController from '../controllers/Tablecontroller';
 
 const router = Router()
 router.get('/', TableController.getAllTable)
