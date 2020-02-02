@@ -275,19 +275,19 @@ describe('Testing the order itens endpoints:', () => {
       })
   });
 
-  it('It should get all orders itens', (done) => {
-    chai.request(app)
-      .get('/api/order/itens')
-      .set('Accept', 'application/json')
-      .end((err, res) => {
-        console.log(res.body)
-        expect(res.status).to.equal(200)
-        res.body.data[0].should.have.property('ProductId')
-        res.body.data[0].should.have.property('OrderId')
-        res.body.data[0].should.have.property('statusItem')
-        done()
-      })
-  });
+  // it('It should get all orders itens', (done) => {
+  //   chai.request(app)
+  //     .get('/api/order/itens')
+  //     .set('Accept', 'application/json')
+  //     .end((err, res) => {
+  //       console.log(res.body)
+  //       expect(res.status).to.equal(200)
+  //       res.body.data[0].should.have.property('ProductId')
+  //       res.body.data[0].should.have.property('OrderId')
+  //       res.body.data[0].should.have.property('statusItem')
+  //       done()
+  //     })
+  // });
 
   // it('It should get a particular order item', (done) => {
   //   const orderItemId = 1;
