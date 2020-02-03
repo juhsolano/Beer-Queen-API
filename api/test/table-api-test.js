@@ -158,9 +158,7 @@ describe('Testing the table endpoints:', () => {
             expect(res.body.data).to.include({})
             chai.request(app)
               .get('/api/table')
-              .end((err, res) => {
-                console.log(res.body)
-              })
+              .end()
             done()
           })
       })

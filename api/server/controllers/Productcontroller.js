@@ -104,16 +104,3 @@ class ProductController {
 }
 
 export default ProductController;
-
-
-// import models from '../../server/src/models/index';
-
-// const getAll = async (req, res) => {
-//   models.product.findAll({raw: true})
-//   console.log(product)
-
-// };
-
-// export default {
-//   getAll
-// }

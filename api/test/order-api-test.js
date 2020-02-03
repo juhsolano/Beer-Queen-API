@@ -208,9 +208,7 @@ describe('Testing the order endpoints:', () => {
       })
     chai.request(app)
       .get('/api/order')
-      .end((err, res) => {
-        console.log(res.body)
-      })
+      .end()
   });
 });
 
@@ -249,7 +247,6 @@ describe('Testing the order itens endpoints:', () => {
                   .post('/api/order/itens')
                   .send(orderItem)
                   .end((err, res) => {
-                    console.log(res.body)
                     expect(res.status).to.equal(201)
                     expect(res.body.data).to.include({
                       id: 1,
@@ -274,59 +271,4 @@ describe('Testing the order itens endpoints:', () => {
         done()
       })
   });
-
-  // it('It should get all orders itens', (done) => {
-  //   chai.request(app)
-  //     .get('/api/order/itens')
-  //     .set('Accept', 'application/json')
-  //     .end((err, res) => {
-  //       console.log(res.body)
-  //       expect(res.status).to.equal(200)
-  //       res.body.data[0].should.have.property('ProductId')
-  //       res.body.data[0].should.have.property('OrderId')
-  //       res.body.data[0].should.have.property('statusItem')
-  //       done()
-  //     })
-  // });
-
-  // it('It should get a particular order item', (done) => {
-  //   const orderItemId = 1;
-  //   chai.request(app)
-  //     .get(`/api/order/item/${orderItemId}`)
-  //     .set('Accept', 'application/json')
-  //     .end((err, res) => {
-  //       console.log(res.body)
-  //       expect(res.status).to.equal(200)
-  //       res.body.data.should.have.property('ProductId')
-  //       res.body.data.should.have.property('OrderId')
-  //       res.body.data.should.have.property('statusItem')
-  //       done()
-  //     })
-  // });
-
-  // it('It should not get a particular order item with invalid id', (done) => {
-  //   const orderItemId = 8888
-  //   chai.request(app)
-  //     .get(`/api/order/itens/${orderItemId}`)
-  //     .set('Accept', 'application/json')
-  //     .end((err, res) => {
-  //       expect(res.status).to.equal(404)
-  //       res.body.should.have.property('message')
-  //         .eql(`Cannot find Order item with the id ${orderItemId}`)
-  //       done()
-  //     })
-  // });
-
-  // it('It should not get a particular order item with non-numeric id', (done) => {
-  //   const orderItemId = 'aaa'
-  //   chai.request(app)
-  //     .get(`/api/order/itens/${orderItemId}`)
-  //     .set('Accept', 'application/json')
-  //     .end((err, res) => {
-  //       expect(res.status).to.equal(400)
-  //       res.body.should.have.property('message')
-  //         .eql('Please input a valid numeric value')
-  //       done()
-  //     })
-  // });
 });
