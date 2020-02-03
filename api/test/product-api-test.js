@@ -178,9 +178,7 @@ describe('Testing the product endpoints:', () => {
             expect(res.body.data).to.include({})
             chai.request(app)
               .get('/api/product')
-              .end((err, res) => {
-                console.log(res.body)
-              })
+              .end()
           })
       })
     done()
