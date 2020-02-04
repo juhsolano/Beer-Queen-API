@@ -21,17 +21,17 @@ O projeto foi desenvolvido partindo de um _boilerplate_ fornecido que continha a
 
 Dentro da pasta do projeto e tendo-se o NodeJs e Docker devidamente instalados é possível subir a aplicação através do comando: 
 
-   docker-compose up <ambiente>
+``` docker-compose up <ambiente>```
 
 Podendo ser os ambientes: _db_, _dev_ ou _test_ (para rodar os testes de integração). 
 A aplicação se encontra 
 [hospedada no Heroku](https://beer-queen.herokuapp.com). 
 
-Endpoints disponíveis:
+As requisições podem ser executadas através dos endpoints:
 
 HTTP API
 
-__/product__
+`__/product__`
 
 * GET /product
 * GET /product/:productid
@@ -39,7 +39,7 @@ __/product__
 * PUT /product/:productid
 * DELETE /product/:productid
 
-__order__
+`__/order__`
 
 * GET /order
 * GET /order/:orderid
@@ -53,7 +53,7 @@ __order__
 * DELETE /order/:orderid
 * DELETE /order/itens/:itensid
 
-__/table__
+`__/table__`
 
 * GET /table
 * GET /table/:tableid
@@ -61,8 +61,20 @@ __/table__
 * PUT /table/:tableid
 * DELETE /table/:tableid
 
+**Exemplo de requisição:**  
+
+Para acessar a lista de produtos disponíveis no estabelecimento basta acessar:
+
+```https://beer-queen.herokuapp.com/api/product```
+
+E para acessar um produto específico, basta acrescentar o id:
+
+```https://beer-queen.herokuapp.com/api/product/4```
+
 
 ![beer_queen](img/beer_queen.gif)
+
+**Figura 1.** Banco de dados sendo populado através do Postman.
 
 ***
 ## 3. Tecnologias e Ferramentas Envolvidas
